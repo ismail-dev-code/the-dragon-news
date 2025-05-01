@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router";
+import NewsCard from "../components/NewsCard";
 
 const CategoryNews = () => {
   const { id } = useParams();
@@ -21,7 +22,16 @@ const CategoryNews = () => {
     }
   }, [data, id]);
 
-  return <div>total news found {categoryNews.length}</div>;
+  return (
+    <div>
+      <h1 className="font-bold mb-5">
+        total news found <span className="text-secondary">{categoryNews.length}</span>
+      </h1>
+    <div>
+      {categoryNews.map(news=> <NewsCard key={news.id} news={news}></NewsCard>)}
+    </div>
+    </div>
+  );
 };
 
 export default CategoryNews;
