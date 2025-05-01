@@ -1,4 +1,4 @@
-import { FaEye, FaRegBookmark, FaShareAlt } from "react-icons/fa";
+import { FaEye, FaRegBookmark, FaShareAlt, FaStar } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 
 const NewsCard = ({ news }) => {
@@ -60,14 +60,11 @@ const NewsCard = ({ news }) => {
 
       {/* Card Footer */}
       <div className="flex justify-between items-center px-4 py-3 border-t">
-        <div className="flex items-center gap-1 text-orange-500">
-          <AiFillStar className="text-xl" />
-          <AiFillStar className="text-xl" />
-          <AiFillStar className="text-xl" />
-          <AiFillStar className="text-xl" />
-          <span className="text-sm font-semibold text-gray-800">
-            {rating.number}
-          </span>
+      <div className="flex items-center gap-1 text-orange-400">
+          {Array.from({ length: rating.number }).map((_, i) => (
+            <FaStar key={i} />
+          ))}
+          <span className="ml-2 text-gray-600">{rating.number}</span>
         </div>
         <div className="flex items-center gap-1 text-gray-500">
           <FaEye />
