@@ -15,7 +15,7 @@ const NewsDetailsCard = ({ news }) => {
         className="btn btn-secondary"
         to={`/category/${news.category_id}`}
       >
-        All News in this category
+        Back to Category
       </Link>
     </div>
   );
