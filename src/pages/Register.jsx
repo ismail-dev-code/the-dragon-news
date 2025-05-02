@@ -1,10 +1,11 @@
 import React, { use, useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Register = () => {
-  const { createUser, setUser } = use(AuthContext);
+  const { createUser, setUser, updateUser } = use(AuthContext);
   const [nameError, setNameError] = useState("");
+  const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -21,10 +22,17 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        setUser(user);
+        updateUser({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUser({ ...user, displayName: name, photoURL: photo });
+            navigate("/");
+          })
+          .catch((error) => {
+            setUser(error);
+          });
       })
       .catch((error) => {
-        const errorCode = error.code;
+        // const errorCode = error.code;
         const errorMessage = error.message;
         alert(errorMessage);
       });
@@ -45,7 +53,11 @@ const Register = () => {
               className="input"
               placeholder="Your Name"
             />
-            {nameError && <p className="text-red-400"><small>{nameError}</small></p>}
+            {nameError && (
+              <p className="text-red-400">
+                <small>{nameError}</small>
+              </p>
+            )}
             <label className="label">Photo URL</label>
             <input
               type="url"
