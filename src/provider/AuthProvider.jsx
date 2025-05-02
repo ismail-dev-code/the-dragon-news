@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
 
-export const authContext = createContext();
+export const AuthContext = createContext();
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState({
         name: "hablu mia",
@@ -11,7 +11,7 @@ const AuthProvider = ({children}) => {
         setUser
     }
 
-    return <authContext value={authData}>{children}</authContext>
+    return <AuthContext value={authData}>{children}</AuthContext>
 };
 
 export default AuthProvider;

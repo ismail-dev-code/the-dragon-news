@@ -1,10 +1,10 @@
 import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
 import userImg from '../assets/user.png'
-import { authContext } from '../provider/AuthProvider';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Navbar = () => {
-    const {user} = use(authContext);
+    const {user} = use(AuthContext);
 
     return (
         <div className='flex justify-between items-center w-11/12 mx-auto'>
