@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import LeftAside from "../components/homelayout/LeftAside";
 import RightAside from "../components/homelayout/RightAside";
 import Loading from "../pages/Loading";
+import Footer from "../components/Footer";
 
 const HomeLayout = () => {
   const { state } = useNavigation();
@@ -31,6 +32,9 @@ const HomeLayout = () => {
           <RightAside></RightAside>
         </aside>
       </main>
+      <footer className="fixed bottom-0 left-0 w-full z-50">
+        <Footer></Footer>
+      </footer>
     </div>
   );
 };

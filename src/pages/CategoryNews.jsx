@@ -23,14 +23,11 @@ const CategoryNews = () => {
   }, [data, id]);
 
   return (
-    <div>
-      <h1 className="font-bold mb-5">
-        total news found <span className="text-secondary">{categoryNews.length}</span>
-      </h1>
-    <div>
+    
+    <div className="space-y-6">
       {categoryNews.map(news=> <NewsCard key={news.id} news={news}></NewsCard>)}
     </div>
-    </div>
+  
   );
 };
 
