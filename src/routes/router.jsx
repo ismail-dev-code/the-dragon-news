@@ -5,10 +5,10 @@ import CategoryNews from "../pages/CategoryNews";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AuthLayout from "../layouts/AuthLayout";
-import NewsCard from "../components/NewsCard";
 import NewsDetails from "../pages/NewsDetails";
 import PrivateRoute from "../provider/PrivateRoute";
 import Loading from "../pages/Loading";
+import ErrorPage from "../components/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/*",
-    element: <h1>Error404</h1>,
+    element: <ErrorPage></ErrorPage>,
   },
 ]);
 

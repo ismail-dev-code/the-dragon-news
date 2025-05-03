@@ -19,9 +19,9 @@ const Navbar = () => {
     <div className="flex justify-between items-center w-11/12 mx-auto">
       <div className=""><small>{user && user.email}</small></div>
       <div className="nav  flex gap-5 text-accent">
-        <NavLink to={"/"}>Home</NavLink>
-        <NavLink to={"/about"}>About</NavLink>
-        <NavLink to={"/career"}>Career</NavLink>
+        <NavLink className={"px-1.5 py-0.5 rounded-md"} to={"/"}>Home</NavLink>
+        <NavLink className={"px-1.5 py-0.5 rounded-md"} to={"/about"}>About</NavLink>
+        <NavLink className={"px-1.5 py-0.5 rounded-md"} to={"/career"}>Career</NavLink>
       </div>
       <div className="nav-btn flex gap-5">
         <img
