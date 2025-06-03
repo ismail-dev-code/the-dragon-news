@@ -16,18 +16,19 @@
 
 ## 📦 Project Structure
 
-the-dragon-news/
-├── public/
-├── src/
-│ ├── components/
-│ ├── pages/
-│ ├── routes/
-│ ├── assets/
-│ └── main.jsx
-├── .eslintrc.js
-├── tailwind.config.js
-├── vite.config.js
-└── package.json
+- the-dragon-news/
+  - public/
+  - src/
+    - components/
+    - pages/
+    - routes/
+    - assets/
+    - main.jsx
+  - .eslintrc.js
+  - tailwind.config.js
+  - vite.config.js
+  - package.json
+
 
 
 ## 🚀 Getting Started
